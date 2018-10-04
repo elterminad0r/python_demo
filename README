@@ -5,6 +5,10 @@ waves.py slowly produces several different types of wave.
 fractals.py for fractals in Turtle using Lindermayer systems - meaning each
 fractal is coded in just a couple of lines of definitions.
 
+Perhaps a way to expand this, if you have time, is to allow the user to specify
+the number of iterations to perform. You could also look for other fractals to
+add.
+
 see https://github.com/elterminad0r/github_index
     for general good times
 
