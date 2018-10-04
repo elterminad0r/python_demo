@@ -1,0 +1,38 @@
+Run noughtsandcrosses/play.py to play noughts and crosses against computer.
+
+waves.py slowly produces several different types of wave.
+
+fractals.py for fractals in Turtle using Lindermayer systems - meaning each
+fractal is coded in just a couple of lines of definitions.
+
+see https://github.com/elterminad0r/github_index
+    for general good times
+
+Good Processing things to show people:
+
+If you don't have Git installed, you'll probably need to download ZIP files and
+unzip them, then making sure they're in a directory with the same name as the
+/.*\.py?de/ file, or Processing will refuse to open.
+
+For the second lot, make sure to have installed Python mode (this should not
+required admin access).
+
+https://github.com/elterminad0r/mandelbrot
+https://github.com/elterminad0r/turtles
+https://github.com/elterminad0r/pythanimated
+https://github.com/elterminad0r/mazes
+https://github.com/elterminad0r/pendulums
+https://github.com/elterminad0r/colourconway
+https://github.com/elterminad0r/circles
+
+https://github.com/elterminad0r/kaleidoscope
+https://github.com/elterminad0r/rubiks_cube
+https://github.com/elterminad0r/sorting
+https://github.com/elterminad0r/bubbles
+https://github.com/elterminad0r/ship_game
+https://github.com/elterminad0r/lsystems
+https://github.com/elterminad0r/pong
+https://github.com/elterminad0r/radial_oscillation
+
+see https://github.com/elterminad0r/Postscript/blob/master/README.md
+    for Postscript fractals and other geometrical patterns
