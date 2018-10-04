@@ -24,6 +24,7 @@ FERN_ITERATIONS = 5
 LEVY_ITERATIONS = 10
 HILBERT_ITERATIONS = 5
 SIERP_HEX_ITERATIONS = 7
+KOCH_ITERATIONS = 5
 
 LSystemFractal = namedtuple("LSystemFractal",
                             "name start rules draw_rules iterations")
@@ -126,6 +127,15 @@ sierp_hex = LSystemFractal(
      "+": lambda: t.right(+60)},
     SIERP_HEX_ITERATIONS)
 
+koch = LSystemFractal(
+    "Square Koch Curve",
+    "F",
+    {"F": "F+F-F-F+F"},
+    {"F": draw_fd(1, 3 ** (KOCH_ITERATIONS)),
+     "-": lambda: t.right(+90),
+     "+": lambda: t.right(-90)},
+    KOCH_ITERATIONS)
+
 def draw_fractal(fractal):
     t.setpos(-w / 2, -h / 2)
     t.setheading(0)
@@ -137,7 +147,7 @@ def draw_fractal(fractal):
     for symbol in path:
         fractal.draw_rules[symbol]()
 
-fractals = [sierpinski, dragon, fern, levy_c, hilbert, sierp_hex]
+fractals = [sierpinski, dragon, fern, levy_c, hilbert, sierp_hex, koch]
 
 if __name__ == "__main__":
     while True:
