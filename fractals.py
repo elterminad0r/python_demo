@@ -14,8 +14,10 @@ import turtle as t
 # set the turtle speed to be very fast
 t.speed(0)
 w, h = t.screensize()
+print(w, h)
 
 from collections import namedtuple
+from math import cos, radians
 
 # global constants
 SIERP_ITERATIONS = 6
@@ -25,6 +27,7 @@ LEVY_ITERATIONS = 10
 HILBERT_ITERATIONS = 5
 SIERP_HEX_ITERATIONS = 7
 KOCH_ITERATIONS = 5
+ARERA_ITERATIONS = 6
 
 LSystemFractal = namedtuple("LSystemFractal",
                             "name start rules draw_rules iterations")
@@ -136,6 +139,29 @@ koch = LSystemFractal(
      "+": lambda: t.right(-90)},
     KOCH_ITERATIONS)
 
+arera_lighthouse = LSystemFractal(
+    "Arera's Lighthouse Tree",
+    "0F-G-G",
+    {"F": "F-G+F+G-F",
+     "G": "GG"},
+    {"F": draw_fd(1, 2 ** ARERA_ITERATIONS),
+     "G": draw_fd(1, 2 ** SIERP_ITERATIONS),
+     "-": lambda: t.right(+127),
+     "+": lambda: t.right(-127),
+     "0": lambda: t.right(180)},
+    ARERA_ITERATIONS)
+
+arera_spread = LSystemFractal(
+    "Arera's big old mess",
+    "F-G-G",
+    {"F": "F-G+F+G-F",
+     "G": "GG"},
+    {"F": draw_fd(1, (1 / -cos(radians(117))) ** ARERA_ITERATIONS),
+     "G": draw_fd(1, (1 / -cos(radians(117))) ** ARERA_ITERATIONS),
+     "-": lambda: t.right(-117),
+     "+": lambda: t.right(+117)},
+    ARERA_ITERATIONS)
+
 def draw_fractal(fractal):
     t.setpos(-w / 2, -h / 2)
     t.setheading(0)
@@ -147,7 +173,8 @@ def draw_fractal(fractal):
     for symbol in path:
         fractal.draw_rules[symbol]()
 
-fractals = [sierpinski, dragon, fern, levy_c, hilbert, sierp_hex, koch]
+fractals = [sierpinski, dragon, fern, levy_c, hilbert, sierp_hex, koch,
+            arera_lighthouse, arera_spread]
 
 if __name__ == "__main__":
     while True:
