@@ -145,7 +145,7 @@ arera_lighthouse = LSystemFractal(
     {"F": "F-G+F+G-F",
      "G": "GG"},
     {"F": draw_fd(1, 2 ** ARERA_ITERATIONS),
-     "G": draw_fd(1, 2 ** SIERP_ITERATIONS),
+     "G": draw_fd(1, 2 ** ARERA_ITERATIONS),
      "-": lambda: t.right(+127),
      "+": lambda: t.right(-127),
      "0": lambda: t.right(180)},
