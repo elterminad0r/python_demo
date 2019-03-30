@@ -32,22 +32,22 @@ unzip them, then making sure they're in a directory with the same name as the
 For the second lot, make sure to have installed Python mode (this should not
 required admin access).
 
-https://github.com/goedel-gang/mandelbrot
-https://github.com/goedel-gang/turtles
-https://github.com/goedel-gang/pythanimated
-https://github.com/goedel-gang/mazes
-https://github.com/goedel-gang/pendulums
-https://github.com/goedel-gang/colourconway
-https://github.com/goedel-gang/circles
+- https://github.com/goedel-gang/mandelbrot
+- https://github.com/goedel-gang/turtles
+- https://github.com/goedel-gang/pythanimated
+- https://github.com/goedel-gang/mazes
+- https://github.com/goedel-gang/pendulums
+- https://github.com/goedel-gang/colourconway
+- https://github.com/goedel-gang/circles
 
-https://github.com/goedel-gang/kaleidoscope
-https://github.com/goedel-gang/rubiks\_cube
-https://github.com/goedel-gang/sorting
-https://github.com/goedel-gang/bubbles
-https://github.com/goedel-gang/ship\_game
-https://github.com/goedel-gang/lsystems
-https://github.com/goedel-gang/pong
-https://github.com/goedel-gang/radial\_oscillation
+- https://github.com/goedel-gang/kaleidoscope
+- https://github.com/goedel-gang/rubiks\_cube
+- https://github.com/goedel-gang/sorting
+- https://github.com/goedel-gang/bubbles
+- https://github.com/goedel-gang/ship\_game
+- https://github.com/goedel-gang/lsystems
+- https://github.com/goedel-gang/pong
+- https://github.com/goedel-gang/radial\_oscillation
 
 see https://github.com/goedel-gang/Postscript/blob/master/README.md
     for Postscript fractals and other geometrical patterns
