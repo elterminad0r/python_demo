@@ -4,7 +4,7 @@ It uses layered lazy generators so it is very memory-efficient - effectively
 using a call-stack of the size of the number of iterations. See [1].
 
 For a version in Python-processing, see
-https://github.com/elterminad0r/lsystems
+https://github.com/goedel-gang/lsystems
 
 [1]: https://en.wikipedia.org/wiki/L-system
 """
@@ -29,8 +29,15 @@ SIERP_HEX_ITERATIONS = 7
 KOCH_ITERATIONS = 5
 ARERA_ITERATIONS = 6
 
-LSystemFractal = namedtuple("LSystemFractal",
+_LSystemFractal = namedtuple("LSystemFractal",
                             "name start rules draw_rules iterations")
+
+FRACTAL_REGISTRY = []
+
+def LSystemFractal(*args, **kwargs):
+    lsf = _LSystemFractal(*args, **kwargs)
+    FRACTAL_REGISTRY.append(lsf)
+    return lsf
 
 def substitute(sequence, rules):
     for symbol in sequence:
@@ -173,22 +180,20 @@ def draw_fractal(fractal):
     for symbol in path:
         fractal.draw_rules[symbol]()
 
-fractals = [sierpinski, dragon, fern, levy_c, hilbert, sierp_hex, koch,
-            arera_lighthouse, arera_spread]
-
 if __name__ == "__main__":
     while True:
         print("Available fractals:")
         print("\n".join(
-            "{}: {}".format(ind, i.name) for ind, i in enumerate(fractals)))
+            "{}: {}".format(ind, i.name)
+            for ind, i in enumerate(FRACTAL_REGISTRY)))
         result = input("Enter number of fractal > ")
         try:
             result = int(result)
-            if not (0 <= result < len(fractals)):
+            if not (0 <= result < len(FRACTAL_REGISTRY)):
                 raise ValueError("outside of range")
             try:
                 print("Press Ctrl+C to interrupt")
-                draw_fractal(fractals[result])
+                draw_fractal(FRACTAL_REGISTRY[result])
             except KeyboardInterrupt:
                 pass
         except ValueError as ve:
