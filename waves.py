@@ -26,7 +26,8 @@ def main():
     for wave in cycle([sin_wave, square_wave, sawtooth_wave]):
         for x in range(PERIODS_PER_WAVE * LINES_PER_PERIOD):
             print(("-" if USE_ASCII else "\u2500")
-                * int(MAX_WIDTH * wave(2 * pi * x / LINES_PER_PERIOD)))
+                * int(MAX_WIDTH * wave(2 * pi * x / LINES_PER_PERIOD)),
+                flush=True)
             sleep(1 / LINES_PER_SECOND)
 
 if __name__ == "__main__":
