@@ -30,7 +30,7 @@ KOCH_ITERATIONS = 5
 ARERA_ITERATIONS = 6
 
 _LSystemFractal = namedtuple("LSystemFractal",
-                            "name start rules draw_rules iterations")
+                             "name start rules draw_rules iterations")
 
 FRACTAL_REGISTRY = []
 
