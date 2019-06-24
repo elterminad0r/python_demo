@@ -26,6 +26,7 @@ FERN_ITERATIONS = 5
 LEVY_ITERATIONS = 10
 HILBERT_ITERATIONS = 5
 SIERP_HEX_ITERATIONS = 7
+KOCH_SQUARE_ITERATIONS = 5
 KOCH_ITERATIONS = 5
 ARERA_ITERATIONS = 6
 
@@ -138,13 +139,22 @@ sierp_hex = LSystemFractal(
     SIERP_HEX_ITERATIONS)
 
 koch = LSystemFractal(
+    "Koch Snowflake",
+    "F--F--F",
+    {"F": "F+F--F+F"},
+    {"F": draw_fd(1, 3 ** KOCH_ITERATIONS),
+     "-": lambda: t.right(-60),
+     "+": lambda: t.right(+60)},
+    KOCH_ITERATIONS)
+
+koch_square = LSystemFractal(
     "Square Koch Curve",
     "F",
     {"F": "F+F-F-F+F"},
     {"F": draw_fd(1, 3 ** (KOCH_ITERATIONS)),
      "-": lambda: t.right(+90),
      "+": lambda: t.right(-90)},
-    KOCH_ITERATIONS)
+    KOCH_SQUARE_ITERATIONS)
 
 arera_lighthouse = LSystemFractal(
     "Arera's Lighthouse Tree",
